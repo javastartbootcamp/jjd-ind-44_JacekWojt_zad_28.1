@@ -20,14 +20,14 @@ public class OfferRestController {
         return offerService.searchOffers(title);
     }
 
-    //Metoda zwraca liczbe wszystkich ofert w systemie
+    //Metoda zwraca liczbę wszystkich ofert w systemie
     @GetMapping("/api/offers/count")
     public Long countAll() {
         return (long) offerService.findAll()
                 .size();
     }
 
-    //Metoda dodaje nową oferte do bazy danych
+    //Metoda dodaje nową oferte
     @PostMapping("/api/offers")
     public ResponseEntity<OfferDto> addOffer(@RequestBody OfferInsertDto offerInsertDto) {
         OfferDto offerDto = offerService.insert(offerInsertDto);

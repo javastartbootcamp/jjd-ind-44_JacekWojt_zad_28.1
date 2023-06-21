@@ -19,13 +19,13 @@ public class CategoryRestController {
         return categoryService.findAllCategories();
     }
 
-    //Metoda zwraca liste wszystkich kategori z liczbą ofert
+    //Metoda zwraca listę wszystkich kategorii z liczbą ofert
     @GetMapping("/api/categories")
     public List<CategoryDto> findAllCategoriesWithOfferNumber() {
         return categoryService.findAllCategoriesWithOfferNumber();
     }
 
-    //Usuwanie categori po id
+    //Usuwanie kategorii po id
     @DeleteMapping("/api/categories/{id}")
     public void deleteCategoriesById(@PathVariable Long id) {
         categoryService.deleteCategoryById(id);
